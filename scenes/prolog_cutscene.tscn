@@ -179,22 +179,22 @@ libraries = {
 }
 
 [node name="Storyboard2" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.666667, 0.666667)
 texture = ExtResource("2_cc4rs")
 centered = false
 
 [node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
 visible = false
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("1_2aa8f")
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 671.0
-offset_top = 190.0
-offset_right = 948.0
-offset_bottom = 265.0
+offset_left = 726.0
+offset_top = 188.0
+offset_right = 1003.0
+offset_bottom = 263.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_hxpss")
 theme_override_font_sizes/normal_font_size = 50
@@ -211,10 +211,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 855.0
-offset_top = 550.0
-offset_right = 1102.0
-offset_bottom = 609.0
+offset_left = 995.0
+offset_top = 626.0
+offset_right = 1242.0
+offset_bottom = 685.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_nc0in")
 theme_override_font_sizes/font_size = 35

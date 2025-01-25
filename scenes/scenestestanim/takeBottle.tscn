@@ -107,7 +107,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
 position = Vector2(-1093, 44)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("2_xi52c")
 centered = false
 

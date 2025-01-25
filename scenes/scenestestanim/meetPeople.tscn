@@ -73,7 +73,7 @@ libraries = {
 }
 
 [node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("1_mpa2r")
 centered = false
 

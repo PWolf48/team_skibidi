@@ -44,10 +44,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_prs41")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 908.0
-offset_top = 559.0
-offset_right = 1100.0
-offset_bottom = 607.0
+offset_left = 1006.0
+offset_top = 626.0
+offset_right = 1198.0
+offset_bottom = 674.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_q5l31")
 theme_override_font_sizes/font_size = 30
