@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kl6ifvtajwkb"
-path="res://.godot/imported/char_blue.png-9a711b3fea14dafc4df0d101a4085adf.ctex"
+uid="uid://dc87huccwlcwa"
+path="res://.godot/imported/extras  tileset.png-d046461256cf12d574c80aed65b93b15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bnw/character/char_blue.png"
-dest_files=["res://.godot/imported/char_blue.png-9a711b3fea14dafc4df0d101a4085adf.ctex"]
+source_file="res://assets/bnw/extras  tileset.png"
+dest_files=["res://.godot/imported/extras  tileset.png-d046461256cf12d574c80aed65b93b15.ctex"]
 
 [params]
 

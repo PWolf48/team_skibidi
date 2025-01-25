@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6kmnr3vc1m15"
-path="res://.godot/imported/sign.png-caf69c2dcef2dbf9b2d34acdc969bab2.ctex"
+uid="uid://c6g3pfswv4p3i"
+path="res://.godot/imported/lamp.png-bf17d2c4308198da7e0ea33fb6e519b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bnw/decorations/sign.png"
-dest_files=["res://.godot/imported/sign.png-caf69c2dcef2dbf9b2d34acdc969bab2.ctex"]
+source_file="res://assets/colorful/decorations/lamp.png"
+dest_files=["res://.godot/imported/lamp.png-bf17d2c4308198da7e0ea33fb6e519b1.ctex"]
 
 [params]
 

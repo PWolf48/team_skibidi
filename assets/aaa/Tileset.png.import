@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6110hcebssyf"
-path="res://.godot/imported/rock_3.png-247f9ceee06561a01921b0ae01d75527.ctex"
+uid="uid://b6iujib30a3il"
+path="res://.godot/imported/Tileset.png-5064c00fcef653fbf7be934b3759ce13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bnw/decorations/rock_3.png"
-dest_files=["res://.godot/imported/rock_3.png-247f9ceee06561a01921b0ae01d75527.ctex"]
+source_file="res://assets/aaa/Tileset.png"
+dest_files=["res://.godot/imported/Tileset.png-5064c00fcef653fbf7be934b3759ce13.ctex"]
 
 [params]
 

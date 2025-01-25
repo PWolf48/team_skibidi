@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6g3pfswv4p3i"
-path="res://.godot/imported/lamp.png-5e667e9f921fde896a4d63f9cbba8e02.ctex"
+uid="uid://efd1fupnuwj8"
+path="res://.godot/imported/fence_1.png-17500088fc6cbbca1990913072b30589.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bnw/decorations/lamp.png"
-dest_files=["res://.godot/imported/lamp.png-5e667e9f921fde896a4d63f9cbba8e02.ctex"]
+source_file="res://assets/colorful/decorations/fence_1.png"
+dest_files=["res://.godot/imported/fence_1.png-17500088fc6cbbca1990913072b30589.ctex"]
 
 [params]
 
