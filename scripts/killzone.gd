@@ -9,11 +9,10 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		killPlayer()
+		timer.start()
 
 func _on_timer_timeout() -> void:
-	#get_tree().reload_current_scene()
-	pass
+	killPlayer()
 	
 func killPlayer():
 	player.position = checkpoint_manager.last_location

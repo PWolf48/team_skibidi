@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -250.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blowing_sprite: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var bubble: RigidBody2D = $"../Bubble"
+@onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	bubble.linear_velocity.x = 0
@@ -59,3 +60,7 @@ func _physics_process(delta: float) -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		animated_sprite.play("dead")
+		timer.start()
+		
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()

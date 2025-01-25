@@ -7,10 +7,6 @@ var direction = -1
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var monke: CharacterBody2D = $"."
 
-
-func _ready() -> void:
-	add_to_group("enemy")
-	
 func _process(delta: float) -> void:
 	if left_ray.is_colliding():
 		direction = 1

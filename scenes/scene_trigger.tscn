@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccsvhlmcx3y1x"]
+
+[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="1_2hmmd"]
+
+[node name="scene_trigger" type="Area2D"]
+script = ExtResource("1_2hmmd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
