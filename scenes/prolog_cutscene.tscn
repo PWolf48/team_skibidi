@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://2fqkc2v1mwna"]
+[gd_scene load_steps=12 format=3 uid="uid://2fqkc2v1mwna"]
 
 [ext_resource type="Script" path="res://scripts/prolog_cutscene.gd" id="1_0j6ib"]
 [ext_resource type="Texture2D" uid="uid://c7xkwmpfqypr7" path="res://assets/cutscenes/storyboard1.png" id="1_2aa8f"]
 [ext_resource type="Texture2D" uid="uid://cmqt8ab8ud27d" path="res://assets/cutscenes/storyboard2.png" id="2_cc4rs"]
 [ext_resource type="FontFile" uid="uid://bi25wvfrb0jsu" path="res://fonts/PixelOperator-Bold.ttf" id="3_nc0in"]
+[ext_resource type="FontFile" uid="uid://bwraxeqsfqv8f" path="res://fonts/PixelOperator.ttf" id="4_hxpss"]
 
 [sub_resource type="Animation" id="Animation_r1ddf"]
 length = 4.0
@@ -55,10 +56,22 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/RichTextLabel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_maxke"]
 resource_name = "cutscenePrologue"
-length = 4.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,7 +79,7 @@ tracks/0/path = NodePath("Cutscene/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.5, 2.2, 2.4, 3.2),
+"times": PackedFloat32Array(0.0333333, 1.26667, 2, 3, 3.7, 4.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -78,7 +91,7 @@ tracks/1/path = NodePath("Cutscene/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.2),
+"times": PackedFloat32Array(0, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -90,7 +103,7 @@ tracks/2/path = NodePath("Cutscene/Storyboard1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.3),
+"times": PackedFloat32Array(0, 3.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -102,7 +115,7 @@ tracks/3/path = NodePath("Cutscene/Storyboard2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.3, 2.4),
+"times": PackedFloat32Array(0, 3.1, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -114,7 +127,19 @@ tracks/4/path = NodePath("Cutscene/Button:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.4, 3.8),
+"times": PackedFloat32Array(6.5, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene/RichTextLabel:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.3, 5.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -153,15 +178,26 @@ libraries = {
 "": SubResource("AnimationLibrary_gmb7j")
 }
 
+[node name="Storyboard2" type="Sprite2D" parent="Cutscene"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_cc4rs")
+centered = false
+
 [node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_2aa8f")
 centered = false
 
-[node name="Storyboard2" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_cc4rs")
-centered = false
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscene"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 671.0
+offset_top = 190.0
+offset_right = 948.0
+offset_bottom = 265.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_hxpss")
+theme_override_font_sizes/normal_font_size = 50
+text = "what is that?"
 
 [node name="ColorRect" type="ColorRect" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)

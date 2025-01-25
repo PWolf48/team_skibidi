@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmgpb1gs20nck"]
+
+[ext_resource type="Script" path="res://scripts/cutscenetest/gameplay_1.gd" id="1_qlw4t"]
+
+[node name="Gameplay1" type="Node2D"]
+script = ExtResource("1_qlw4t")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 251.0
+offset_right = 595.0
+offset_bottom = 282.0
+text = "NEXT SCENE"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 213.0
+offset_right = 591.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "gameplay 1"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://djxsbq1d2fc82"]
+
+[ext_resource type="Script" path="res://scripts/cutscenetest/take_bottle.gd" id="1_im7ek"]
+[ext_resource type="Texture2D" uid="uid://bak8hld6yfemr" path="res://assets/cutscenes/ambilbotol.png" id="2_xi52c"]
+
+[sub_resource type="Animation" id="Animation_r1ddf"]
+length = 4.0
+
+[sub_resource type="Animation" id="Animation_0fygy"]
+resource_name = "takeBottle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmb7j"]
+_data = {
+"RESET": SubResource("Animation_r1ddf"),
+"takeBottle": SubResource("Animation_0fygy")
+}
+
+[node name="TakeBottle" type="Node2D"]
+script = ExtResource("1_im7ek")
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmb7j")
+}
+
+[node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_xi52c")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Cutscene"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
