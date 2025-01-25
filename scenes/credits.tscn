@@ -43,6 +43,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xecmx")
 
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 908.0
 offset_top = 559.0
 offset_right = 1100.0

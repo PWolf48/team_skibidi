@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var cutsceneTakeBottle = $Cutscene
+@onready var cutscene = $Cutscene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cutsceneTakeBottle.play("takeBottle")
+	cutscene.play("meetPeople")
 
 
 func _on_cutscene_animation_finished(anim_name: StringName) -> void:

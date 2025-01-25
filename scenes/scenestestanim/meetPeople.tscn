@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://du07eejg7i2oc"]
+
+[ext_resource type="Script" path="res://scripts/cutscenetest/meet_people.gd" id="1_kprg4"]
+[ext_resource type="Texture2D" uid="uid://r6xu5en1ipg2" path="res://assets/cutscenes/storyboard4.png" id="1_mpa2r"]
+
+[sub_resource type="Animation" id="Animation_r1ddf"]
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6amj8"]
+resource_name = "meetPeople"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmb7j"]
+_data = {
+"RESET": SubResource("Animation_r1ddf"),
+"meetPeople": SubResource("Animation_6amj8")
+}
+
+[node name="meetPeople" type="Node2D"]
+script = ExtResource("1_kprg4")
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmb7j")
+}
+
+[node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_mpa2r")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Cutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="Cutscene" to="." method="_on_cutscene_animation_finished"]
