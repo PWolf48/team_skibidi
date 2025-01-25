@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi57i7ufvn1yy"
-path="res://.godot/imported/shop.png-e9400e3d1475443b19c3aab0918c27b2.ctex"
+uid="uid://cdcjid47jjsk4"
+path="res://.godot/imported/BG1.png-14082f0311658d0586848d1ade3bb455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bnw/decorations/shop.png"
-dest_files=["res://.godot/imported/shop.png-e9400e3d1475443b19c3aab0918c27b2.ctex"]
+source_file="res://assets/aaa/BG1.png"
+dest_files=["res://.godot/imported/BG1.png-14082f0311658d0586848d1ade3bb455.ctex"]
 
 [params]
 
