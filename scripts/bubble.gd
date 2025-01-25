@@ -5,6 +5,7 @@ var inverted_gravity = -0.09
 var def_gravity = 0.09
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var bubble: RigidBody2D = $"."
+@onready var timer: Timer = $Timer
 
 func _ready():
 	bubble.visible = false
@@ -16,11 +17,7 @@ func _process(delta):
 		linear_velocity.x = move_speed
 		gravity_scale = 0
 		
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("up_bubble"):
 		gravity_scale = inverted_gravity
-	elif Input.is_action_just_released("ui_up"):
+	elif Input.is_action_just_released("up_bubble"):
 		gravity_scale = def_gravity
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("obstacles"):
-		print("kena")
