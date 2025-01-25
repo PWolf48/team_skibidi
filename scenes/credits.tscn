@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbwo4fdbfej8k"]
+[gd_scene load_steps=8 format=3 uid="uid://bbwo4fdbfej8k"]
 
 [ext_resource type="FontFile" uid="uid://bi25wvfrb0jsu" path="res://fonts/PixelOperator-Bold.ttf" id="1_dbfv1"]
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_vk4bx"]
+[ext_resource type="Texture2D" uid="uid://8v0wmrolhmnn" path="res://assets/menu/credits.png" id="2_g0qjf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xecmx"]
+texture = ExtResource("2_g0qjf")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp1xx"]
 corner_radius_top_left = 20
@@ -12,13 +14,14 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngabp"]
+bg_color = Color(0.470076, 0.470076, 0.470076, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6vfy"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.82606, 0.82606, 0.82606, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -55,11 +58,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jp1xx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ngabp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6vfy")
 text = "Back"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 190.0
-offset_bottom = 40.0
-text = "Game Programmer"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
