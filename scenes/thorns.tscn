@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwok83vmy55yi"]
+
+[ext_resource type="Script" path="res://scripts/thorns.gd" id="1_00fjx"]
+[ext_resource type="Texture2D" uid="uid://vafv1wavhr6t" path="res://assets/sprites/obstacle_thorn.png" id="1_xcnta"]
+[ext_resource type="Texture2D" uid="uid://ry7y0ifdl0tp" path="res://assets/sprites/bubble_pop.png" id="3_75fm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e583f"]
+atlas = ExtResource("1_xcnta")
+region = Rect2(0, 0, 681, 416)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwhqq"]
+atlas = ExtResource("3_75fm5")
+region = Rect2(0, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebam2"]
+atlas = ExtResource("3_75fm5")
+region = Rect2(712, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgwr4"]
+atlas = ExtResource("3_75fm5")
+region = Rect2(1424, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnwjy"]
+atlas = ExtResource("3_75fm5")
+region = Rect2(2136, 0, 712, 712)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx8wy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e583f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwhqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebam2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgwr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnwjy")
+}],
+"loop": true,
+"name": &"pop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5nwb"]
+size = Vector2(46.3784, 26.9896)
+
+[node name="Thorns" type="Area2D"]
+script = ExtResource("1_00fjx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.9875, -3.3)
+scale = Vector2(0.068, 0.068)
+sprite_frames = SubResource("SpriteFrames_wx8wy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.0748, -5)
+scale = Vector2(1, 1)
+skew = 0.617847
+shape = SubResource("RectangleShape2D_u5nwb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
