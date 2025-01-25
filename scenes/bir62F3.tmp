@@ -33,10 +33,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iot6i"]
-size = Vector2(23.749, 17.6324)
+size = Vector2(16.1673, 10.8507)
 
-[node name="bird" type="Area2D" groups=["enemy"]]
-collision_mask = 2
+[node name="bird" type="Area2D"]
 script = ExtResource("1_00eog")
 
 [node name="bird_body" type="AnimatedSprite2D" parent="."]
@@ -44,17 +43,15 @@ position = Vector2(-6, -3)
 scale = Vector2(0.435, 0.435)
 sprite_frames = SubResource("SpriteFrames_rf0dn")
 autoplay = "default"
-frame_progress = 0.473973
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
+frame_progress = 0.776762
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, -5.5)
+position = Vector2(-6.08367, -6)
 scale = Vector2(1, 1)
 skew = 0.741765
 shape = SubResource("RectangleShape2D_iot6i")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

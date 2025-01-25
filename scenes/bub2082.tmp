@@ -54,17 +54,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ehxu"]
 radius = 8.0
 
-[node name="Bubble" type="RigidBody2D" groups=["bubble"]]
-collision_layer = 2
-collision_mask = 3
+[node name="Bubble" type="CharacterBody2D" groups=["bubble"]]
 script = ExtResource("1_cql77")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["bubble"]]
 z_index = 1
 scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_7cd7j")
-animation = &"pop"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.484026
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bubble"]]
 z_index = 1
