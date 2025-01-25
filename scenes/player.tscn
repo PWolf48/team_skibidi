@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcbwrjae2gi1d"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_h5ll8"]
+[ext_resource type="Texture2D" uid="uid://kbdij0mde6j3" path="res://assets/sprites/Bob_blow_bubble.png" id="2_i4ypm"]
+[ext_resource type="Texture2D" uid="uid://cdycqfc4bo8rv" path="res://assets/sprites/BOB_character.png" id="2_n08qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ega68"]
+atlas = ExtResource("2_n08qr")
+region = Rect2(0, 0, 712, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkm7k"]
+atlas = ExtResource("2_n08qr")
+region = Rect2(712, 0, 712, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wk12"]
+atlas = ExtResource("2_n08qr")
+region = Rect2(1424, 0, 712, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fmy1"]
+atlas = ExtResource("2_n08qr")
+region = Rect2(2136, 0, 712, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aeg7"]
+atlas = ExtResource("2_n08qr")
+region = Rect2(2848, 0, 712, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlfga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ega68")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkm7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wk12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fmy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aeg7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oryls"]
+height = 52.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwy57"]
+atlas = ExtResource("2_i4ypm")
+region = Rect2(0, 0, 1080, 1900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itw6n"]
+atlas = ExtResource("2_i4ypm")
+region = Rect2(1080, 0, 1080, 1900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abikl"]
+atlas = ExtResource("2_i4ypm")
+region = Rect2(2160, 0, 1080, 1900)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_marp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwy57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itw6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abikl")
+}],
+"loop": false,
+"name": &"blowing",
+"speed": 3.0
+}]
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_h5ll8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(2, -10)
+scale = Vector2(0.1, 0.088)
+sprite_frames = SubResource("SpriteFrames_qlfga")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -7)
+shape = SubResource("CapsuleShape2D_oryls")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(31, -35)
+scale = Vector2(0.08, 0.071)
+sprite_frames = SubResource("SpriteFrames_marp5")
+animation = &"blowing"

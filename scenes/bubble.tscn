@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8md33qffjd1k"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_cql77"]
+[ext_resource type="Texture2D" uid="uid://ry7y0ifdl0tp" path="res://assets/sprites/bubble_pop.png" id="1_nro5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc2or"]
+atlas = ExtResource("1_nro5l")
+region = Rect2(0, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e3hb"]
+atlas = ExtResource("1_nro5l")
+region = Rect2(0, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ghi"]
+atlas = ExtResource("1_nro5l")
+region = Rect2(712, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnp3f"]
+atlas = ExtResource("1_nro5l")
+region = Rect2(1424, 0, 712, 712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjap7"]
+atlas = ExtResource("1_nro5l")
+region = Rect2(2136, 0, 712, 712)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7cd7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc2or")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e3hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ghi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnp3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjap7")
+}],
+"loop": true,
+"name": &"pop",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ehxu"]
+radius = 14.0
+
+[node name="Bubble" type="RigidBody2D" groups=["bubble"]]
+script = ExtResource("1_cql77")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_7cd7j")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.484026
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ehxu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
