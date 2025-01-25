@@ -21,6 +21,7 @@ obstacles=""
 bubble=""
 player=""
 ground=""
+enemy=""
 
 [input]
 

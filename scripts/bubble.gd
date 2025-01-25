@@ -3,7 +3,6 @@ extends RigidBody2D
 var move_speed = 30
 var inverted_gravity = -0.09
 var def_gravity = 0.09
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var bubble: RigidBody2D = $"."
 @onready var timer: Timer = $Timer
 
@@ -21,3 +20,4 @@ func _process(delta):
 		gravity_scale = inverted_gravity
 	elif Input.is_action_just_released("up_bubble"):
 		gravity_scale = def_gravity
+		
