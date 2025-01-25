@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbwo4fdbfej8k"]
+
+[ext_resource type="FontFile" uid="uid://bi25wvfrb0jsu" path="res://fonts/PixelOperator-Bold.ttf" id="1_dbfv1"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_vk4bx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xecmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp1xx"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngabp"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6vfy"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vk4bx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xecmx")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 908.0
+offset_top = 559.0
+offset_right = 1100.0
+offset_bottom = 607.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dbfv1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_jp1xx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ngabp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6vfy")
+text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 40.0
+text = "Game Programmer"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

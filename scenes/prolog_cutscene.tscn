@@ -1,0 +1,189 @@
+[gd_scene load_steps=11 format=3 uid="uid://2fqkc2v1mwna"]
+
+[ext_resource type="Script" path="res://scripts/prolog_cutscene.gd" id="1_0j6ib"]
+[ext_resource type="Texture2D" uid="uid://c7xkwmpfqypr7" path="res://assets/cutscenes/storyboard1.png" id="1_2aa8f"]
+[ext_resource type="Texture2D" uid="uid://cmqt8ab8ud27d" path="res://assets/cutscenes/storyboard2.png" id="2_cc4rs"]
+[ext_resource type="FontFile" uid="uid://bi25wvfrb0jsu" path="res://fonts/PixelOperator-Bold.ttf" id="3_nc0in"]
+
+[sub_resource type="Animation" id="Animation_r1ddf"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/Storyboard2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/Button:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_maxke"]
+resource_name = "cutscenePrologue"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.5, 2.2, 2.4, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/Storyboard1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/Storyboard2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/Button:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.4, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmb7j"]
+_data = {
+"RESET": SubResource("Animation_r1ddf"),
+"cutscenePrologue": SubResource("Animation_maxke")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sp0p"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fkk5"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rx185"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="PrologCutscene" type="Node2D"]
+script = ExtResource("1_0j6ib")
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmb7j")
+}
+
+[node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_2aa8f")
+centered = false
+
+[node name="Storyboard2" type="Sprite2D" parent="Cutscene"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_cc4rs")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Cutscene"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="Cutscene"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 855.0
+offset_top = 550.0
+offset_right = 1102.0
+offset_bottom = 609.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nc0in")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_6sp0p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkk5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rx185")
+text = "Next"
+
+[connection signal="pressed" from="Cutscene/Button" to="." method="_on_button_pressed"]
