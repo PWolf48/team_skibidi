@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://3mkrr4cxhpwv"]
+
+[ext_resource type="Script" path="res://scripts/bird.gd" id="1_00eog"]
+[ext_resource type="Texture2D" uid="uid://3fsfbwxofvx0" path="res://assets/sprites/evilBirdpixel.png" id="1_v235r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dicuu"]
+atlas = ExtResource("1_v235r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8dt"]
+atlas = ExtResource("1_v235r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lljn1"]
+atlas = ExtResource("1_v235r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf0dn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dicuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr8dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lljn1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iot6i"]
+size = Vector2(16.1673, 10.8507)
+
+[node name="bird" type="Area2D"]
+script = ExtResource("1_00eog")
+
+[node name="bird_body" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -3)
+scale = Vector2(0.435, 0.435)
+sprite_frames = SubResource("SpriteFrames_rf0dn")
+autoplay = "default"
+frame_progress = 0.486072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.08367, -6)
+scale = Vector2(1, 1)
+skew = 0.741765
+shape = SubResource("RectangleShape2D_iot6i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

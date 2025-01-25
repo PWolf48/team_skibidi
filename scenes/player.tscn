@@ -1,8 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcbwrjae2gi1d"]
+[gd_scene load_steps=19 format=3 uid="uid://bcbwrjae2gi1d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_h5ll8"]
+[ext_resource type="Texture2D" uid="uid://dudjj4telvuig" path="res://assets/sprites/deadPose_pixel.png" id="2_6o1ru"]
 [ext_resource type="Texture2D" uid="uid://b5alstpedrwws" path="res://assets/sprites/BOB_characterpixel.png" id="2_gejfy"]
 [ext_resource type="Texture2D" uid="uid://dm2ejhaedolng" path="res://assets/sprites/Bob_blow_bubblepixel.png" id="3_ciweb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcb4k"]
+atlas = ExtResource("2_6o1ru")
+region = Rect2(0, 0, 128, 194)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so7ho"]
 atlas = ExtResource("2_gejfy")
@@ -32,6 +37,14 @@ region = Rect2(420, 0, 84, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fcb4k")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_so7ho")
 }, {
 "duration": 1.0,
@@ -56,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 4.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oryls"]
@@ -89,8 +102,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"blowing",
-"speed": 3.0
+"speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r43ik"]
+size = Vector2(12, 23)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_h5ll8")
@@ -102,7 +118,7 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ayqpo")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.274167
+frame_progress = 0.526469
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -9)
@@ -111,7 +127,15 @@ shape = SubResource("CapsuleShape2D_oryls")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(11, -18)
 scale = Vector2(0.375, 0.3125)
 sprite_frames = SubResource("SpriteFrames_n20wg")
 animation = &"blowing"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, -9.5)
+shape = SubResource("RectangleShape2D_r43ik")
