@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccsvhlmcx3y1x"]
+[gd_scene load_steps=3 format=3 uid="uid://ccsvhlmcx3y1x"]
 
 [ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="1_2hmmd"]
 
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_sopm0"]
+
 [node name="scene_trigger" type="Area2D"]
 script = ExtResource("1_2hmmd")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_sopm0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

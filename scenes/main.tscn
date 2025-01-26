@@ -4365,7 +4365,7 @@ sources/1 = SubResource("TileSetAtlasSource_scovx")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ge3p5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lktnh"]
-size = Vector2(21, 41)
+size = Vector2(18, 36)
 
 [node name="Main" type="Node2D"]
 
@@ -4414,7 +4414,7 @@ position = Vector2(725, 582)
 collision_mask = 3
 
 [node name="bird" parent="." instance=ExtResource("11_8adjp")]
-position = Vector2(1078, 464)
+position = Vector2(1385, 461)
 
 [node name="Killzone" parent="." instance=ExtResource("13_bqwr8")]
 position = Vector2(535, 1008)
@@ -4430,12 +4430,13 @@ script = ExtResource("14_n8vwq")
 position = Vector2(862, 567)
 
 [node name="Thorns" parent="." instance=ExtResource("4_o61vj")]
-position = Vector2(920, 567)
+position = Vector2(921, 576)
 
 [node name="scene_trigger" parent="." instance=ExtResource("15_lc3l2")]
 position = Vector2(556, 536)
 collision_mask = 3
+connected_scene = "takeBottle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="scene_trigger"]
-position = Vector2(0.5, -11.5)
+position = Vector2(-1, -14)
 shape = SubResource("RectangleShape2D_lktnh")

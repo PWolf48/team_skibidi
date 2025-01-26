@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-
+var player
+var checkpoint_manager
 const SPEED = 130.0
 const JUMP_VELOCITY = -250.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -11,6 +12,8 @@ const JUMP_VELOCITY = -250.0
 func _ready() -> void:
 	bubble.linear_velocity.x = 0
 	bubble.gravity_scale = 0
+	checkpoint_manager = get_parent().get_node("CheckpointManager")
+	player = get_parent().get_node("player")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -49,6 +52,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("blow"):
 		bubble.show()
 	
+	if Input.is_action_pressed("restart"):
+		killPlayer()
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -64,3 +70,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
+
+func killPlayer():
+	player.position = checkpoint_manager.last_location
