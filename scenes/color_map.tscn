@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bwps87ilg10g"]
+[gd_scene load_steps=37 format=3 uid="uid://bwps87ilg10g"]
 
 [ext_resource type="Texture2D" uid="uid://dhbian3c17u7t" path="res://assets/sprites/world_tileset.png" id="1_feg42"]
 [ext_resource type="Texture2D" uid="uid://clf1h2c23t8rm" path="res://assets/sprites/Background_0.png" id="2_07o50"]
@@ -15,8 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://p5ob3ehh0wna" path="res://scenes/killzone.tscn" id="11_umjqn"]
 [ext_resource type="Script" path="res://scripts/checkpoint_manager.gd" id="12_mss8n"]
 [ext_resource type="PackedScene" uid="uid://ca40aolnikmh3" path="res://scenes/checkpoint.tscn" id="13_ixjpx"]
+[ext_resource type="AudioStream" uid="uid://luemep1tqeyi" path="res://assets/audio/Bird Sound3.mp3" id="13_o3rv0"]
 [ext_resource type="PackedScene" uid="uid://dwok83vmy55yi" path="res://scenes/thorns.tscn" id="14_n7448"]
 [ext_resource type="PackedScene" uid="uid://ccsvhlmcx3y1x" path="res://scenes/scene_trigger.tscn" id="15_lkrj5"]
+[ext_resource type="AudioStream" uid="uid://cb7dlok86316c" path="res://assets/audio/Backsound2.mp3" id="18_170t0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v57q6"]
 texture = ExtResource("1_feg42")
@@ -7466,6 +7468,10 @@ position = Vector2(3474, 297)
 [node name="bird10" parent="." instance=ExtResource("10_xc0au")]
 position = Vector2(3591, 337)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="bird10"]
+stream = ExtResource("13_o3rv0")
+autoplay = true
+
 [node name="bird11" parent="." instance=ExtResource("10_xc0au")]
 position = Vector2(3714, 304)
 
@@ -7587,3 +7593,9 @@ connected_scene = "meetPeople"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="scene_trigger"]
 position = Vector2(-1, -14)
 shape = SubResource("RectangleShape2D_lktnh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_170t0")
+volume_db = 5.0
+autoplay = true
+max_distance = 12000.0

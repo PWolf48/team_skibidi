@@ -14,7 +14,7 @@ config/name="Sphere Of Destiny"
 config/description="Project Global Game Jam Bogor 2025"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://sod_i.png"
 
 [global_group]
 
