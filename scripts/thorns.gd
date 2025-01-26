@@ -19,6 +19,7 @@ func _on_body_entered(body) -> void:
 
 func _on_timer_timeout() -> void:
 	killPlayer()
+	get_tree().reload_current_scene()
 
 func killPlayer():
 	player.visible = true
