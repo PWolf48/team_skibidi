@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		timer.start()
-	else:
+	elif body.is_in_group("bubble"):
 		body.queue_free()
 		timer.start()
 

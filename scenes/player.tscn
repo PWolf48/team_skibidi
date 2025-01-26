@@ -106,7 +106,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r43ik"]
-size = Vector2(11, 23)
+size = Vector2(11, 16)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 9
@@ -138,7 +138,7 @@ collision_layer = 9
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(2.5, -9.5)
+position = Vector2(2.5, -10)
 shape = SubResource("RectangleShape2D_r43ik")
 
 [node name="Timer" type="Timer" parent="."]
