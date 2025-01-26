@@ -44,13 +44,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xecmx")
+metadata/_edit_use_anchors_ = true
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 915.0
-offset_top = 557.0
-offset_right = 1107.0
-offset_bottom = 605.0
+anchor_left = 0.794271
+anchor_top = 0.859568
+anchor_right = 0.960938
+anchor_bottom = 0.933642
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_dbfv1")
 theme_override_font_sizes/font_size = 30
@@ -58,5 +59,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jp1xx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ngabp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y6vfy")
 text = "Back"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

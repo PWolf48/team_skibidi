@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://2fqkc2v1mwna"]
+[gd_scene load_steps=14 format=3 uid="uid://2fqkc2v1mwna"]
 
 [ext_resource type="Script" path="res://scripts/prolog_cutscene.gd" id="1_0j6ib"]
 [ext_resource type="Texture2D" uid="uid://c7xkwmpfqypr7" path="res://assets/cutscenes/storyboard1.png" id="1_2aa8f"]
@@ -35,19 +35,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Cutscene/Storyboard2:visible")
+tracks/2/path = NodePath("Cutscene/Button:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Cutscene/Button:self_modulate")
+tracks/3/path = NodePath("Cutscene/RichTextLabel:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,14 +59,26 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Cutscene/RichTextLabel:self_modulate")
+tracks/4/path = NodePath("Cutscene/Panel:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene/Panel2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_maxke"]
@@ -99,50 +111,50 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Cutscene/Storyboard1:visible")
+tracks/2/path = NodePath("Cutscene/Button:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cutscene/Storyboard2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 3.1, 3.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Cutscene/Button:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(6.5, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cutscene/RichTextLabel:self_modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/RichTextLabel:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(5.3, 5.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene/Panel2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.5, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gmb7j"]
@@ -150,6 +162,12 @@ _data = {
 "RESET": SubResource("Animation_r1ddf"),
 "cutscenePrologue": SubResource("Animation_maxke")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjbhm"]
+texture = ExtResource("2_cc4rs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlcgh"]
+texture = ExtResource("1_2aa8f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sp0p"]
 corner_radius_top_left = 20
@@ -178,26 +196,38 @@ libraries = {
 "": SubResource("AnimationLibrary_gmb7j")
 }
 
-[node name="Storyboard2" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_cc4rs")
-centered = false
+[node name="Panel2" type="Panel" parent="Cutscene"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sjbhm")
+metadata/_edit_use_anchors_ = true
 
-[node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_2aa8f")
-centered = false
+[node name="Panel" type="Panel" parent="Cutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tlcgh")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 656.0
-offset_top = 175.0
-offset_right = 933.0
-offset_bottom = 250.0
+anchors_preset = -1
+anchor_left = 0.571181
+anchor_top = 0.276235
+anchor_right = 0.811632
+anchor_bottom = 0.391975
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_hxpss")
-theme_override_font_sizes/normal_font_size = 50
-text = "what is that?"
+theme_override_font_sizes/normal_font_size = 55
+text = "Apaan tuh?"
 
 [node name="ColorRect" type="ColorRect" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -210,10 +240,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="Cutscene"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 872.0
-offset_top = 560.0
-offset_right = 1119.0
-offset_bottom = 619.0
+anchors_preset = -1
+anchor_left = 0.756944
+anchor_top = 0.864198
+anchor_right = 0.971354
+anchor_bottom = 0.955247
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_nc0in")
 theme_override_font_sizes/font_size = 35
@@ -221,5 +252,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6sp0p")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkk5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rx185")
 text = "Next"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Cutscene/Button" to="." method="_on_button_pressed"]

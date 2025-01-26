@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://du07eejg7i2oc"]
+[gd_scene load_steps=7 format=3 uid="uid://du07eejg7i2oc"]
 
 [ext_resource type="Script" path="res://scripts/cutscenetest/meet_people.gd" id="1_kprg4"]
 [ext_resource type="Texture2D" uid="uid://r6xu5en1ipg2" path="res://assets/cutscenes/storyboard4.png" id="1_mpa2r"]
@@ -64,6 +64,9 @@ _data = {
 "meetPeople": SubResource("Animation_6amj8")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1p23"]
+texture = ExtResource("1_mpa2r")
+
 [node name="meetPeople" type="Node2D"]
 script = ExtResource("1_kprg4")
 
@@ -72,10 +75,14 @@ libraries = {
 "": SubResource("AnimationLibrary_gmb7j")
 }
 
-[node name="Storyboard1" type="Sprite2D" parent="Cutscene"]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_mpa2r")
-centered = false
+[node name="Panel" type="Panel" parent="Cutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d1p23")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Cutscene"]
 anchors_preset = 15
