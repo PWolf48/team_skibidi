@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cudp0n1ns2k2c"]
+[gd_scene load_steps=8 format=3 uid="uid://cudp0n1ns2k2c"]
 
 [ext_resource type="Script" path="res://scripts/hint_menu.gd" id="1_ymehp"]
+[ext_resource type="Texture2D" uid="uid://cw5m8t7d5ltfv" path="res://assets/menu/hint.png" id="2_at8ts"]
 [ext_resource type="FontFile" uid="uid://bi25wvfrb0jsu" path="res://fonts/PixelOperator-Bold.ttf" id="2_q5l31"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prs41"]
+texture = ExtResource("2_at8ts")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogmss"]
 corner_radius_top_left = 20
