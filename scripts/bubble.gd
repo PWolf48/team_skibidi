@@ -19,5 +19,7 @@ func _process(delta):
 		
 	if Input.is_action_pressed("up_bubble"):
 		gravity_scale = inverted_gravity
+	elif Input.is_action_pressed("forward"):
+		linear_velocity.x += move_speed * delta
 	elif Input.is_action_just_released("up_bubble"):
 		gravity_scale = def_gravity

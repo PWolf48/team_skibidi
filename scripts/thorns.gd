@@ -12,14 +12,13 @@ func _on_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		timer.start()
 		player.visible = false
-	else:
+	elif body.is_in_group("bubble"):
 		body.queue_free()
-		timer.start()
+		get_tree().reload_current_scene()
 		print("Game over")
 
 func _on_timer_timeout() -> void:
 	killPlayer()
-	get_tree().reload_current_scene()
 
 func killPlayer():
 	player.visible = true
