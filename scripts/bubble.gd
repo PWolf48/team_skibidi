@@ -3,7 +3,6 @@ extends RigidBody2D
 var move_speed = 30
 var inverted_gravity = -0.09
 var def_gravity = 0.09
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var bubble: RigidBody2D = $"."
 
 func _ready():
