@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		bubble.show()
 	
 	if Input.is_action_pressed("restart"):
-		killPlayer()
+		get_tree().reload_current_scene()
 	
 	if direction:
 		velocity.x = direction * SPEED
